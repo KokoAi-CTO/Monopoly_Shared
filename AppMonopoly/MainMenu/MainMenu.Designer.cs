@@ -48,10 +48,9 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(120, 120);
-            this.btnPlay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnPlay.Location = new System.Drawing.Point(80, 78);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(112, 43);
+            this.btnPlay.Size = new System.Drawing.Size(75, 28);
             this.btnPlay.TabIndex = 0;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
@@ -59,18 +58,20 @@
             // 
             // btnRules
             // 
-            this.btnRules.Location = new System.Drawing.Point(120, 199);
+            this.btnRules.Location = new System.Drawing.Point(80, 129);
+            this.btnRules.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRules.Name = "btnRules";
-            this.btnRules.Size = new System.Drawing.Size(118, 44);
+            this.btnRules.Size = new System.Drawing.Size(79, 29);
             this.btnRules.TabIndex = 1;
             this.btnRules.Text = "Rules";
             this.btnRules.UseVisualStyleBackColor = true;
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(120, 278);
+            this.btnQuit.Location = new System.Drawing.Point(80, 181);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(118, 41);
+            this.btnQuit.Size = new System.Drawing.Size(79, 27);
             this.btnQuit.TabIndex = 2;
             this.btnQuit.Text = "Quit";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -83,7 +84,8 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1093, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(766, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -95,30 +97,30 @@
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(258, 30);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // loadAllGameToolStripMenuItem
             // 
             this.loadAllGameToolStripMenuItem.Name = "loadAllGameToolStripMenuItem";
-            this.loadAllGameToolStripMenuItem.Size = new System.Drawing.Size(258, 30);
+            this.loadAllGameToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.loadAllGameToolStripMenuItem.Text = "Load Previous Game";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(255, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(179, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(258, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
@@ -126,21 +128,22 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(667, 82);
+            this.pictureBox1.Location = new System.Drawing.Point(445, 53);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 219);
+            this.pictureBox1.Size = new System.Drawing.Size(149, 142);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -148,17 +151,18 @@
             // lblMonopoly
             // 
             this.lblMonopoly.AutoSize = true;
-            this.lblMonopoly.Location = new System.Drawing.Point(120, 82);
+            this.lblMonopoly.Location = new System.Drawing.Point(80, 53);
+            this.lblMonopoly.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMonopoly.Name = "lblMonopoly";
-            this.lblMonopoly.Size = new System.Drawing.Size(165, 20);
+            this.lblMonopoly.Size = new System.Drawing.Size(113, 13);
             this.lblMonopoly.TabIndex = 5;
             this.lblMonopoly.Text = "Welcome to Monopoly";
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1093, 442);
+            this.ClientSize = new System.Drawing.Size(766, 333);
             this.Controls.Add(this.lblMonopoly);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnQuit);
@@ -166,7 +170,6 @@
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MainMenu";
             this.Text = "Main Menu";
             this.menuStrip1.ResumeLayout(false);
