@@ -38,6 +38,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblMainName = new System.Windows.Forms.Label();
             this.lblMoney = new System.Windows.Forms.Label();
             this.lblValueMoney = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDiceValue = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -54,9 +54,10 @@
             // 
             // btnDice
             // 
-            this.btnDice.Location = new System.Drawing.Point(27, 488);
+            this.btnDice.Location = new System.Drawing.Point(18, 317);
+            this.btnDice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDice.Name = "btnDice";
-            this.btnDice.Size = new System.Drawing.Size(120, 47);
+            this.btnDice.Size = new System.Drawing.Size(80, 31);
             this.btnDice.TabIndex = 0;
             this.btnDice.Text = "Roll Dice";
             this.btnDice.UseVisualStyleBackColor = true;
@@ -71,7 +72,8 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1850, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(1450, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -83,30 +85,30 @@
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(50, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(258, 30);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // loadAllGameToolStripMenuItem
             // 
             this.loadAllGameToolStripMenuItem.Name = "loadAllGameToolStripMenuItem";
-            this.loadAllGameToolStripMenuItem.Size = new System.Drawing.Size(258, 30);
+            this.loadAllGameToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.loadAllGameToolStripMenuItem.Text = "Load Previous Game";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(255, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(179, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(258, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -115,55 +117,75 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainMenuToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // mainMenuToolStripMenuItem
+            // 
+            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
+            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.mainMenuToolStripMenuItem.Text = "Main Menu";
+            this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
             // 
             // lblMainName
             // 
             this.lblMainName.AutoSize = true;
-            this.lblMainName.Location = new System.Drawing.Point(330, 63);
+            this.lblMainName.Location = new System.Drawing.Point(220, 41);
+            this.lblMainName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMainName.Name = "lblMainName";
-            this.lblMainName.Size = new System.Drawing.Size(70, 20);
+            this.lblMainName.Size = new System.Drawing.Size(49, 13);
             this.lblMainName.TabIndex = 5;
             this.lblMainName.Text = "Player#1";
             // 
             // lblMoney
             // 
             this.lblMoney.AutoSize = true;
-            this.lblMoney.Location = new System.Drawing.Point(656, 63);
+            this.lblMoney.Location = new System.Drawing.Point(437, 41);
+            this.lblMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMoney.Name = "lblMoney";
-            this.lblMoney.Size = new System.Drawing.Size(56, 20);
+            this.lblMoney.Size = new System.Drawing.Size(39, 13);
             this.lblMoney.TabIndex = 6;
             this.lblMoney.Text = "Money";
             // 
             // lblValueMoney
             // 
             this.lblValueMoney.AutoSize = true;
-            this.lblValueMoney.Location = new System.Drawing.Point(728, 63);
+            this.lblValueMoney.Location = new System.Drawing.Point(485, 41);
+            this.lblValueMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValueMoney.Name = "lblValueMoney";
-            this.lblValueMoney.Size = new System.Drawing.Size(58, 20);
+            this.lblValueMoney.Size = new System.Drawing.Size(40, 13);
             this.lblValueMoney.TabIndex = 7;
             this.lblValueMoney.Text = "$1,500";
             // 
             // lblProperties
             // 
             this.lblProperties.AutoSize = true;
-            this.lblProperties.Location = new System.Drawing.Point(23, 72);
+            this.lblProperties.Location = new System.Drawing.Point(15, 47);
+            this.lblProperties.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProperties.Name = "lblProperties";
-            this.lblProperties.Size = new System.Drawing.Size(135, 20);
+            this.lblProperties.Size = new System.Drawing.Size(91, 13);
             this.lblProperties.TabIndex = 8;
             this.lblProperties.Text = "Owned Properties";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(246, 106);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 69);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(1500, 1500);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -174,42 +196,29 @@
             // lblDiceValue
             // 
             this.lblDiceValue.AutoSize = true;
-            this.lblDiceValue.Location = new System.Drawing.Point(23, 453);
+            this.lblDiceValue.Location = new System.Drawing.Point(15, 294);
+            this.lblDiceValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiceValue.Name = "lblDiceValue";
-            this.lblDiceValue.Size = new System.Drawing.Size(86, 20);
+            this.lblDiceValue.Size = new System.Drawing.Size(59, 13);
             this.lblDiceValue.TabIndex = 10;
             this.lblDiceValue.Text = "Dice Value";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 141);
+            this.pictureBox2.Location = new System.Drawing.Point(18, 92);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(110, 77);
+            this.pictureBox2.Size = new System.Drawing.Size(73, 50);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mainMenuToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // mainMenuToolStripMenuItem
-            // 
-            this.mainMenuToolStripMenuItem.Name = "mainMenuToolStripMenuItem";
-            this.mainMenuToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
-            this.mainMenuToolStripMenuItem.Text = "Main Menu";
-            this.mainMenuToolStripMenuItem.Click += new System.EventHandler(this.mainMenuToolStripMenuItem_Click);
-            // 
             // GameBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1850, 1050);
+            this.ClientSize = new System.Drawing.Size(1450, 903);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblDiceValue);
             this.Controls.Add(this.pictureBox1);
@@ -219,6 +228,7 @@
             this.Controls.Add(this.lblMainName);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnDice);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GameBoard";
             this.Text = "GameBoard";
             this.menuStrip1.ResumeLayout(false);
