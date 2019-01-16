@@ -19,12 +19,31 @@ namespace MainMenu
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            PlayerInfo py = new PlayerInfo ();
+            py.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRules_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Rules rs = new Rules();
+            rs.ShowDialog();
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
