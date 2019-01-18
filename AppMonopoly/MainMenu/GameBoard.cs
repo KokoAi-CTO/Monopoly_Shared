@@ -24,7 +24,22 @@ namespace MainMenu
 
         private void btnDice_Click(object sender, EventArgs e)
         {
+            
+            Random rdm = new Random();
+            int Dice1 = rdm.Next(1, 7);
+            int Dice2 = rdm.Next(1, 7);
+            int Move = Dice1 + Dice2;
+            
+            int XValue = 1164;
+            int YValue = 814;
 
+            if (Move == 8)
+            {
+
+                XValue = 748;
+                YValue = 809;
+            }
+            Sprit1.Location = new Point( XValue, YValue);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
