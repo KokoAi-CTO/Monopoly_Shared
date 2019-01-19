@@ -219,7 +219,7 @@
             // 
             this.HatSprite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.HatSprite.Image = ((System.Drawing.Image)(resources.GetObject("HatSprite.Image")));
-            this.HatSprite.Location = new System.Drawing.Point(377, 686);
+            this.HatSprite.Location = new System.Drawing.Point(1009, 191);
             this.HatSprite.Margin = new System.Windows.Forms.Padding(2);
             this.HatSprite.Name = "HatSprite";
             this.HatSprite.Size = new System.Drawing.Size(65, 43);
