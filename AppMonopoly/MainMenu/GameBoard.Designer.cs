@@ -42,20 +42,31 @@
             this.mainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblMainName = new System.Windows.Forms.Label();
             this.lblMoney = new System.Windows.Forms.Label();
-            this.lblValueMoney = new System.Windows.Forms.Label();
+            this.MVaule = new System.Windows.Forms.Label();
             this.lblProperties = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDiceValue = new System.Windows.Forms.Label();
-            this.Sprit1 = new System.Windows.Forms.PictureBox();
+            this.HatSprite = new System.Windows.Forms.PictureBox();
             this.TestCaseButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SNVaule = new System.Windows.Forms.Label();
+            this.PLVaule = new System.Windows.Forms.Label();
+            this.BLVaule = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.NEVaule = new System.Windows.Forms.Label();
+            this.DCVaule = new System.Windows.Forms.Label();
+            this.TrVaule = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sprit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HatSprite)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDice
             // 
-            this.btnDice.Location = new System.Drawing.Point(18, 317);
+            this.btnDice.Location = new System.Drawing.Point(22, 543);
             this.btnDice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDice.Name = "btnDice";
             this.btnDice.Size = new System.Drawing.Size(80, 31);
@@ -145,47 +156,47 @@
             // lblMainName
             // 
             this.lblMainName.AutoSize = true;
-            this.lblMainName.Location = new System.Drawing.Point(220, 41);
+            this.lblMainName.Location = new System.Drawing.Point(74, 39);
             this.lblMainName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMainName.Name = "lblMainName";
-            this.lblMainName.Size = new System.Drawing.Size(49, 13);
+            this.lblMainName.Size = new System.Drawing.Size(43, 13);
             this.lblMainName.TabIndex = 5;
-            this.lblMainName.Text = "Player#1";
+            this.lblMainName.Text = "Player#";
             // 
             // lblMoney
             // 
             this.lblMoney.AutoSize = true;
-            this.lblMoney.Location = new System.Drawing.Point(437, 41);
+            this.lblMoney.Location = new System.Drawing.Point(21, 93);
             this.lblMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMoney.Name = "lblMoney";
             this.lblMoney.Size = new System.Drawing.Size(39, 13);
             this.lblMoney.TabIndex = 6;
             this.lblMoney.Text = "Money";
             // 
-            // lblValueMoney
+            // MVaule
             // 
-            this.lblValueMoney.AutoSize = true;
-            this.lblValueMoney.Location = new System.Drawing.Point(485, 41);
-            this.lblValueMoney.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblValueMoney.Name = "lblValueMoney";
-            this.lblValueMoney.Size = new System.Drawing.Size(40, 13);
-            this.lblValueMoney.TabIndex = 7;
-            this.lblValueMoney.Text = "$1,500";
+            this.MVaule.AutoSize = true;
+            this.MVaule.Location = new System.Drawing.Point(98, 93);
+            this.MVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MVaule.Name = "MVaule";
+            this.MVaule.Size = new System.Drawing.Size(43, 13);
+            this.MVaule.TabIndex = 7;
+            this.MVaule.Text = "MVaule";
             // 
             // lblProperties
             // 
             this.lblProperties.AutoSize = true;
-            this.lblProperties.Location = new System.Drawing.Point(15, 47);
+            this.lblProperties.Location = new System.Drawing.Point(19, 226);
             this.lblProperties.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProperties.Name = "lblProperties";
-            this.lblProperties.Size = new System.Drawing.Size(91, 13);
+            this.lblProperties.Size = new System.Drawing.Size(94, 13);
             this.lblProperties.TabIndex = 8;
-            this.lblProperties.Text = "Owned Properties";
+            this.lblProperties.Text = "Owned Properties:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(697, 103);
+            this.pictureBox1.Location = new System.Drawing.Point(368, 77);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(716, 761);
@@ -197,44 +208,164 @@
             // lblDiceValue
             // 
             this.lblDiceValue.AutoSize = true;
-            this.lblDiceValue.Location = new System.Drawing.Point(15, 294);
+            this.lblDiceValue.Location = new System.Drawing.Point(21, 528);
             this.lblDiceValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiceValue.Name = "lblDiceValue";
-            this.lblDiceValue.Size = new System.Drawing.Size(59, 13);
+            this.lblDiceValue.Size = new System.Drawing.Size(102, 13);
             this.lblDiceValue.TabIndex = 10;
-            this.lblDiceValue.Text = "Dice Value";
+            this.lblDiceValue.Text = "Dice Number Rolled";
             // 
-            // Sprit1
+            // HatSprite
             // 
-            this.Sprit1.Image = ((System.Drawing.Image)(resources.GetObject("Sprit1.Image")));
-            this.Sprit1.Location = new System.Drawing.Point(957, 814);
-            this.Sprit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Sprit1.Name = "Sprit1";
-            this.Sprit1.Size = new System.Drawing.Size(73, 50);
-            this.Sprit1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Sprit1.TabIndex = 11;
-            this.Sprit1.TabStop = false;
+            this.HatSprite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.HatSprite.Image = ((System.Drawing.Image)(resources.GetObject("HatSprite.Image")));
+            this.HatSprite.Location = new System.Drawing.Point(1033, 742);
+            this.HatSprite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HatSprite.Name = "HatSprite";
+            this.HatSprite.Size = new System.Drawing.Size(65, 43);
+            this.HatSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HatSprite.TabIndex = 11;
+            this.HatSprite.TabStop = false;
             // 
             // TestCaseButton
             // 
-            this.TestCaseButton.Location = new System.Drawing.Point(18, 388);
+            this.TestCaseButton.Location = new System.Drawing.Point(24, 609);
             this.TestCaseButton.Name = "TestCaseButton";
             this.TestCaseButton.Size = new System.Drawing.Size(75, 23);
             this.TestCaseButton.TabIndex = 12;
-            this.TestCaseButton.Text = "TestButton";
+            this.TestCaseButton.Text = "Move";
             this.TestCaseButton.UseVisualStyleBackColor = true;
             this.TestCaseButton.Click += new System.EventHandler(this.TestCaseButton_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 122);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "SpiteName:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Player Loction";
+            // 
+            // SNVaule
+            // 
+            this.SNVaule.AutoSize = true;
+            this.SNVaule.Location = new System.Drawing.Point(98, 122);
+            this.SNVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SNVaule.Name = "SNVaule";
+            this.SNVaule.Size = new System.Drawing.Size(49, 13);
+            this.SNVaule.TabIndex = 16;
+            this.SNVaule.Text = "SNVaule";
+            // 
+            // PLVaule
+            // 
+            this.PLVaule.AutoSize = true;
+            this.PLVaule.Location = new System.Drawing.Point(100, 158);
+            this.PLVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PLVaule.Name = "PLVaule";
+            this.PLVaule.Size = new System.Drawing.Size(47, 13);
+            this.PLVaule.TabIndex = 17;
+            this.PLVaule.Text = "PLVaule";
+            // 
+            // BLVaule
+            // 
+            this.BLVaule.AutoSize = true;
+            this.BLVaule.Location = new System.Drawing.Point(100, 191);
+            this.BLVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.BLVaule.Name = "BLVaule";
+            this.BLVaule.Size = new System.Drawing.Size(47, 13);
+            this.BLVaule.TabIndex = 18;
+            this.BLVaule.Text = "BLVaule";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 191);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Block Loction";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(21, 67);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Name";
+            // 
+            // NEVaule
+            // 
+            this.NEVaule.AutoSize = true;
+            this.NEVaule.Location = new System.Drawing.Point(100, 67);
+            this.NEVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NEVaule.Name = "NEVaule";
+            this.NEVaule.Size = new System.Drawing.Size(49, 13);
+            this.NEVaule.TabIndex = 21;
+            this.NEVaule.Text = "NEVaule";
+            // 
+            // DCVaule
+            // 
+            this.DCVaule.AutoSize = true;
+            this.DCVaule.Location = new System.Drawing.Point(136, 528);
+            this.DCVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DCVaule.Name = "DCVaule";
+            this.DCVaule.Size = new System.Drawing.Size(49, 13);
+            this.DCVaule.TabIndex = 22;
+            this.DCVaule.Text = "DCVaule";
+            // 
+            // TrVaule
+            // 
+            this.TrVaule.AutoSize = true;
+            this.TrVaule.Location = new System.Drawing.Point(121, 39);
+            this.TrVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TrVaule.Name = "TrVaule";
+            this.TrVaule.Size = new System.Drawing.Size(44, 13);
+            this.TrVaule.TabIndex = 23;
+            this.TrVaule.Text = "TrVaule";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(139, 609);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "NextPlayer";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1450, 903);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TrVaule);
+            this.Controls.Add(this.DCVaule);
+            this.Controls.Add(this.NEVaule);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.BLVaule);
+            this.Controls.Add(this.PLVaule);
+            this.Controls.Add(this.SNVaule);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.TestCaseButton);
-            this.Controls.Add(this.Sprit1);
+            this.Controls.Add(this.HatSprite);
             this.Controls.Add(this.lblDiceValue);
             this.Controls.Add(this.lblProperties);
-            this.Controls.Add(this.lblValueMoney);
+            this.Controls.Add(this.MVaule);
             this.Controls.Add(this.lblMoney);
             this.Controls.Add(this.lblMainName);
             this.Controls.Add(this.menuStrip1);
@@ -246,7 +377,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sprit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HatSprite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,13 +396,24 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label lblMainName;
         private System.Windows.Forms.Label lblMoney;
-        private System.Windows.Forms.Label lblValueMoney;
+        private System.Windows.Forms.Label MVaule;
         private System.Windows.Forms.Label lblProperties;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblDiceValue;
-        private System.Windows.Forms.PictureBox Sprit1;
+        private System.Windows.Forms.PictureBox HatSprite;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mainMenuToolStripMenuItem;
         private System.Windows.Forms.Button TestCaseButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label SNVaule;
+        private System.Windows.Forms.Label PLVaule;
+        private System.Windows.Forms.Label BLVaule;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label NEVaule;
+        private System.Windows.Forms.Label DCVaule;
+        private System.Windows.Forms.Label TrVaule;
+        private System.Windows.Forms.Button button1;
     }
 }
