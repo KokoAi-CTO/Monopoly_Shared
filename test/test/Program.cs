@@ -10,17 +10,36 @@ namespace test
     {
         static void Main(string[] args)
         {
-            int boxIndex = 1;
-            string namebox = "box" + boxIndex;
-            //bool box1 = true;
-            if(namebox =="box1")
-            {
-                bool box1 = true;
-            }
-            Console.WriteLine(namebox);
-            
+            Console.WriteLine("\n----------");
+            rectanglePrint(5,7);
+           
             Console.ReadKey();
+        }
 
+        public static void rectanglePrint(int width, int height)
+        {
+            for (int i = 0; i < height; i++)
+            {
+                Console.WriteLine("");
+
+                for (int k = 0; k < width; k++)
+                {
+                    if (i > 0 && k > 0)
+                    {
+                        if (i < height - 1 && k < width - 1)
+                        {
+                            Console.Write("       ");
+                        }
+                        else
+                            Console.Write(i + "," + k + "End ");
+                    }
+                    else
+                        Console.Write(i + "," + k + "ENd ");
+                }
+
+
+            }
         }
     }
+
 }
