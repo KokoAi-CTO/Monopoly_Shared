@@ -47,6 +47,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDiceValue = new System.Windows.Forms.Label();
             this.Sprit1 = new System.Windows.Forms.PictureBox();
+            this.TestCaseButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sprit1)).BeginInit();
@@ -184,7 +185,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(521, 103);
+            this.pictureBox1.Location = new System.Drawing.Point(324, 103);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(716, 761);
@@ -206,7 +207,7 @@
             // Sprit1
             // 
             this.Sprit1.Image = ((System.Drawing.Image)(resources.GetObject("Sprit1.Image")));
-            this.Sprit1.Location = new System.Drawing.Point(1164, 814);
+            this.Sprit1.Location = new System.Drawing.Point(957, 814);
             this.Sprit1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Sprit1.Name = "Sprit1";
             this.Sprit1.Size = new System.Drawing.Size(73, 50);
@@ -214,20 +215,31 @@
             this.Sprit1.TabIndex = 11;
             this.Sprit1.TabStop = false;
             // 
+            // TestCaseButton
+            // 
+            this.TestCaseButton.Location = new System.Drawing.Point(18, 388);
+            this.TestCaseButton.Name = "TestCaseButton";
+            this.TestCaseButton.Size = new System.Drawing.Size(75, 23);
+            this.TestCaseButton.TabIndex = 12;
+            this.TestCaseButton.Text = "TestButton";
+            this.TestCaseButton.UseVisualStyleBackColor = true;
+            this.TestCaseButton.Click += new System.EventHandler(this.TestCaseButton_Click);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1450, 903);
+            this.Controls.Add(this.TestCaseButton);
             this.Controls.Add(this.Sprit1);
             this.Controls.Add(this.lblDiceValue);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblProperties);
             this.Controls.Add(this.lblValueMoney);
             this.Controls.Add(this.lblMoney);
             this.Controls.Add(this.lblMainName);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnDice);
+            this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GameBoard";
             this.Text = "GameBoard";
@@ -260,5 +272,6 @@
         private System.Windows.Forms.PictureBox Sprit1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mainMenuToolStripMenuItem;
+        private System.Windows.Forms.Button TestCaseButton;
     }
 }

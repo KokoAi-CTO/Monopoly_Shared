@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace MainMenu
 {
     public partial class GameBoard : Form
     {
+
         public GameBoard()
         {
             InitializeComponent();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -53,6 +56,28 @@ namespace MainMenu
             this.Hide();
             MainMenu  mm = new MainMenu();
             mm.ShowDialog();
+        }
+
+        private void TestCaseButton_Click(object sender, EventArgs e)
+        {
+            string[] playernames = new string[4];
+            int[] playerMoney = { 1500, 1500, 1500, 1500 };
+            playernames = PlayerInfo.getplayernames();
+
+
+            string[] playersprits = new string[4];
+            playersprits = PlayerInfo.getPlayerSprit();
+
+            string[] playermoney = new string[4];
+            playermoney = PlayerInfo.getPlayerMoney();
+            for (int i = 0; i < 4; i++)
+            {
+
+                MessageBox.Show(" Your Name is " + playernames[i] + " You Have a " + playersprits[i] + " Sprite." + " You Blance is $" + playermoney[i]);
+            }
+
+
+                
         }
     }
 }

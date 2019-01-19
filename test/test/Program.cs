@@ -10,12 +10,15 @@ namespace test
     {
         static void Main(string[] args)
         {
-            int num = 0;
-            while(num < 10)
+            int boxIndex = 1;
+            string namebox = "box" + boxIndex;
+            //bool box1 = true;
+            if(namebox =="box1")
             {
-                num = num += 2;
-                Console.WriteLine(num);
+                bool box1 = true;
             }
+            Console.WriteLine(namebox);
+            
             Console.ReadKey();
 
         }

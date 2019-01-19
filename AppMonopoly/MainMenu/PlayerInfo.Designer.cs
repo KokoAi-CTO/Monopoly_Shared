@@ -40,19 +40,18 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPly1 = new System.Windows.Forms.Label();
-            this.lblPlay2 = new System.Windows.Forms.Label();
-            this.lblPlay3 = new System.Windows.Forms.Label();
-            this.lblPlay4 = new System.Windows.Forms.Label();
             this.lblPlyrnames = new System.Windows.Forms.Label();
-            this.txtBox1 = new System.Windows.Forms.TextBox();
-            this.txtBox2 = new System.Windows.Forms.TextBox();
-            this.txtBox3 = new System.Windows.Forms.TextBox();
-            this.txtBox4 = new System.Windows.Forms.TextBox();
+            this.PlayerBox1 = new System.Windows.Forms.TextBox();
             this.lblsprite = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.CheckBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.lblWhatPlayer = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,7 +62,7 @@
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(8, 244);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(78, 32);
             this.btnBack.TabIndex = 0;
@@ -74,7 +73,7 @@
             // btnNext
             // 
             this.btnNext.Location = new System.Drawing.Point(435, 244);
-            this.btnNext.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(2);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(79, 33);
             this.btnNext.TabIndex = 1;
@@ -147,42 +146,12 @@
             // lblPly1
             // 
             this.lblPly1.AutoSize = true;
-            this.lblPly1.Location = new System.Drawing.Point(49, 61);
+            this.lblPly1.Location = new System.Drawing.Point(229, 63);
             this.lblPly1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPly1.Name = "lblPly1";
-            this.lblPly1.Size = new System.Drawing.Size(49, 13);
+            this.lblPly1.Size = new System.Drawing.Size(43, 13);
             this.lblPly1.TabIndex = 5;
-            this.lblPly1.Text = "Player#1";
-            // 
-            // lblPlay2
-            // 
-            this.lblPlay2.AutoSize = true;
-            this.lblPlay2.Location = new System.Drawing.Point(154, 61);
-            this.lblPlay2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPlay2.Name = "lblPlay2";
-            this.lblPlay2.Size = new System.Drawing.Size(49, 13);
-            this.lblPlay2.TabIndex = 6;
-            this.lblPlay2.Text = "Player#2";
-            // 
-            // lblPlay3
-            // 
-            this.lblPlay3.AutoSize = true;
-            this.lblPlay3.Location = new System.Drawing.Point(277, 61);
-            this.lblPlay3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPlay3.Name = "lblPlay3";
-            this.lblPlay3.Size = new System.Drawing.Size(49, 13);
-            this.lblPlay3.TabIndex = 7;
-            this.lblPlay3.Text = "Player#3";
-            // 
-            // lblPlay4
-            // 
-            this.lblPlay4.AutoSize = true;
-            this.lblPlay4.Location = new System.Drawing.Point(400, 61);
-            this.lblPlay4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPlay4.Name = "lblPlay4";
-            this.lblPlay4.Size = new System.Drawing.Size(49, 13);
-            this.lblPlay4.TabIndex = 8;
-            this.lblPlay4.Text = "Player#4";
+            this.lblPly1.Text = "Player#";
             // 
             // lblPlyrnames
             // 
@@ -194,37 +163,13 @@
             this.lblPlyrnames.TabIndex = 9;
             this.lblPlyrnames.Text = "ENTER PLAYER NAMES-- Minimum 2 players";
             // 
-            // txtBox1
+            // PlayerBox1
             // 
-            this.txtBox1.Location = new System.Drawing.Point(36, 92);
-            this.txtBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtBox1.Name = "txtBox1";
-            this.txtBox1.Size = new System.Drawing.Size(68, 20);
-            this.txtBox1.TabIndex = 10;
-            // 
-            // txtBox2
-            // 
-            this.txtBox2.Location = new System.Drawing.Point(157, 91);
-            this.txtBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtBox2.Name = "txtBox2";
-            this.txtBox2.Size = new System.Drawing.Size(68, 20);
-            this.txtBox2.TabIndex = 11;
-            // 
-            // txtBox3
-            // 
-            this.txtBox3.Location = new System.Drawing.Point(274, 92);
-            this.txtBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtBox3.Name = "txtBox3";
-            this.txtBox3.Size = new System.Drawing.Size(68, 20);
-            this.txtBox3.TabIndex = 12;
-            // 
-            // txtBox4
-            // 
-            this.txtBox4.Location = new System.Drawing.Point(403, 91);
-            this.txtBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtBox4.Name = "txtBox4";
-            this.txtBox4.Size = new System.Drawing.Size(68, 20);
-            this.txtBox4.TabIndex = 13;
+            this.PlayerBox1.Location = new System.Drawing.Point(232, 88);
+            this.PlayerBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.PlayerBox1.Name = "PlayerBox1";
+            this.PlayerBox1.Size = new System.Drawing.Size(68, 20);
+            this.PlayerBox1.TabIndex = 10;
             // 
             // lblsprite
             // 
@@ -239,8 +184,8 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(36, 178);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(52, 185);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(67, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,8 +195,8 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(157, 170);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(157, 185);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(67, 46);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -261,8 +206,8 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(280, 170);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Location = new System.Drawing.Point(250, 185);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(67, 45);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,37 +217,87 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(403, 170);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Location = new System.Drawing.Point(364, 184);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(67, 47);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 18;
             this.pictureBox4.TabStop = false;
             // 
+            // CheckBox1
+            // 
+            this.CheckBox1.AllowDrop = true;
+            this.CheckBox1.AutoSize = true;
+            this.CheckBox1.Location = new System.Drawing.Point(52, 163);
+            this.CheckBox1.Name = "CheckBox1";
+            this.CheckBox1.Size = new System.Drawing.Size(42, 17);
+            this.CheckBox1.TabIndex = 19;
+            this.CheckBox1.Text = "Car";
+            this.CheckBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(157, 163);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(43, 17);
+            this.checkBox2.TabIndex = 20;
+            this.checkBox2.Text = "Hat";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(250, 163);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(70, 17);
+            this.checkBox3.TabIndex = 21;
+            this.checkBox3.Text = "WeelCart";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(364, 163);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(46, 17);
+            this.checkBox4.TabIndex = 22;
+            this.checkBox4.Text = "Dog";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // lblWhatPlayer
+            // 
+            this.lblWhatPlayer.AutoSize = true;
+            this.lblWhatPlayer.Location = new System.Drawing.Point(276, 63);
+            this.lblWhatPlayer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblWhatPlayer.Name = "lblWhatPlayer";
+            this.lblWhatPlayer.Size = new System.Drawing.Size(13, 13);
+            this.lblWhatPlayer.TabIndex = 23;
+            this.lblWhatPlayer.Text = "1";
+            // 
             // PlayerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 291);
+            this.Controls.Add(this.lblWhatPlayer);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.CheckBox1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblsprite);
-            this.Controls.Add(this.txtBox4);
-            this.Controls.Add(this.txtBox3);
-            this.Controls.Add(this.txtBox2);
-            this.Controls.Add(this.txtBox1);
+            this.Controls.Add(this.PlayerBox1);
             this.Controls.Add(this.lblPlyrnames);
-            this.Controls.Add(this.lblPlay4);
-            this.Controls.Add(this.lblPlay3);
-            this.Controls.Add(this.lblPlay2);
             this.Controls.Add(this.lblPly1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PlayerInfo";
             this.Text = "PlayerInfo";
             this.menuStrip1.ResumeLayout(false);
@@ -329,18 +324,17 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label lblPly1;
-        private System.Windows.Forms.Label lblPlay2;
-        private System.Windows.Forms.Label lblPlay3;
-        private System.Windows.Forms.Label lblPlay4;
         private System.Windows.Forms.Label lblPlyrnames;
-        private System.Windows.Forms.TextBox txtBox1;
-        private System.Windows.Forms.TextBox txtBox2;
-        private System.Windows.Forms.TextBox txtBox3;
-        private System.Windows.Forms.TextBox txtBox4;
+        private System.Windows.Forms.TextBox PlayerBox1;
         private System.Windows.Forms.Label lblsprite;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.CheckBox CheckBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.Label lblWhatPlayer;
     }
 }
