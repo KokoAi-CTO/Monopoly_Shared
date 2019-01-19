@@ -67,7 +67,7 @@
             // btnDice
             // 
             this.btnDice.Location = new System.Drawing.Point(22, 543);
-            this.btnDice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDice.Margin = new System.Windows.Forms.Padding(2);
             this.btnDice.Name = "btnDice";
             this.btnDice.Size = new System.Drawing.Size(80, 31);
             this.btnDice.TabIndex = 0;
@@ -197,7 +197,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(368, 77);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(716, 761);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,8 +219,8 @@
             // 
             this.HatSprite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.HatSprite.Image = ((System.Drawing.Image)(resources.GetObject("HatSprite.Image")));
-            this.HatSprite.Location = new System.Drawing.Point(1033, 742);
-            this.HatSprite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.HatSprite.Location = new System.Drawing.Point(377, 686);
+            this.HatSprite.Margin = new System.Windows.Forms.Padding(2);
             this.HatSprite.Name = "HatSprite";
             this.HatSprite.Size = new System.Drawing.Size(65, 43);
             this.HatSprite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -371,7 +371,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnDice);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GameBoard";
             this.Text = "GameBoard";
             this.menuStrip1.ResumeLayout(false);

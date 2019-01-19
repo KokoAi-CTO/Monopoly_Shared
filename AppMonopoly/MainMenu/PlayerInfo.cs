@@ -42,15 +42,15 @@ namespace MainMenu
         {
             if (PlayerBox1.Text == "")
             {
-                MessageBox.Show("Enter Somethink");
+                MessageBox.Show("Enter Something");
             }
             else if (!(CheckBox1.Checked || checkBox2.Checked || checkBox3.Checked || checkBox4.Checked))
             {
-                MessageBox.Show("Pick a Sprit");
+                MessageBox.Show("Pick a Sprite");
             }
             else if(CheckBox1.Checked & checkBox2.Checked & checkBox3.Checked & checkBox4.Checked || CheckBox1.Checked & checkBox4.Checked || CheckBox1.Checked & checkBox3.Checked || checkBox2.Checked & checkBox3.Checked || checkBox2.Checked & checkBox4.Checked || CheckBox1.Checked & checkBox2.Checked || checkBox3.Checked & checkBox4.Checked)
             {
-                MessageBox.Show("Pick Just one Sprte");
+                MessageBox.Show("Pick Just one Sprite");
             }
             else if (ToExit < 3)
             {

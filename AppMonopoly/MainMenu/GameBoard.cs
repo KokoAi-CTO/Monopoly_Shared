@@ -21,8 +21,8 @@ namespace MainMenu
         private int stopMove = 0;
 
 
-        private int[] xcoordinate = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        private int[] ycoordinate = new int[39];
+        private int[] xcoordinate = { 1044, 928, 870, 812, 754, 694, 636, 578, 520, 462, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        private int[] ycoordinate = { 766, 766, 766, 766, 766, 766, 766, 766, 766, 766, 766, }
 
 
         string[] playermoney = PlayerInfo.getPlayerMoney();
