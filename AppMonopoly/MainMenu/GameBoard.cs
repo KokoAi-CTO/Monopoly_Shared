@@ -13,14 +13,14 @@ namespace MainMenu
 {
     public partial class GameBoard : Form
     {
-
+        //____________________Just a Lot of Arrays_________________________________________________:)
         private int[] Ploc = new int[4]; // Store the Loction of the Player in a Array
         private int PlayerTurn = 0; // What Player we are on. 
 
         private int Move = 0; // How mush to move
         private int stopMove = 0; //Stop the Player form moveing agin.
-        private 
-
+        private PictureBox[] pictures = new PictureBox[4];
+       
 
         //Array of Coordinates
         private int[] xcoordinate = { 1044, 928, 870, 812, 754, 694, 636, 578, 520, 462, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 462, 520, 578, 636, 694, 754, 812, 870, 928, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044};
@@ -33,67 +33,32 @@ namespace MainMenu
 
         string[] BlockId = getBlockId();
         //string[] BlockRent = getBlockRent();
-
+        //_______________________________________________________________________________________________________________
         public GameBoard()
         {
             InitializeComponent();
+            InitializeSpritesArray();
             getBlockId();
             Display();
-            
-
         }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void InitializeSpritesArray() 
         {
-
-        }
-
-        private void btnDice_Click(object sender, EventArgs e) 
-        {
-            Dice(); //Calls Dice Function 
-            Display(); //Calls the Display Function
-        }
-
-
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-
-        }
-
-        private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e) //Goes back to MainMenu
-        {
-            this.Hide();
-            MainMenu mm = new MainMenu();
-            mm.ShowDialog();
-        }
-
-        private void TestCaseButton_Click(object sender, EventArgs e) 
-        {
-
-
-            if (Move == 0)
+            string spritename;
+            for (int i = 0; i <4; i++) //aessing PlayersSprits array to Objget Pictures Array 
             {
-                MessageBox.Show("RollDice ");
-            }
-            else if (stopMove == 1)
-            {
-                MessageBox.Show("Cheater Can not Move more than one time! ");
-                stopMove = 0;
-                Move = 0;
-                PlayerTurn++; if (PlayerTurn > 3) { PlayerTurn = 0; }
-                Display();
+                spritename = playersprits[i];
+                switch (spritename) {
+                    case "Car":                
+                    pictures[i] = SpriteCar; break;
+                    case "Hat": 
+                    pictures[i] = SpriteHat; break;
+                    case "WeelCart":
+                    pictures[i] = SpritCart; break;
+                    case "Dog":
+                    pictures[i] = SpriteShoe; break;
 
+                }
             }
-            else if(stopMove == 0)
-            {
-                PlayerMove();
-                MoveSprte();
-                Display();
-                stopMove = 1;
-            }
-
 
         }
 
@@ -130,43 +95,22 @@ namespace MainMenu
              
             return "";
         }
+
         public string MoveSprte()
         {
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int XValue = xcoordinate[MVaule];
             int YValue = ycoordinate[MVaule]; 
             
-            SpritCart.Location = new Point(XValue, YValue); 
+            pictures[PlayerTurn].Location = new Point(XValue, YValue); 
             return "";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public string CheckBlock()
         {
-           
-
-        }
-
-        private void btnNext_Click(object sender, EventArgs e) 
-        {
-            if (Move == 0)
-            {
-                MessageBox.Show("RollDice ");
-            }
-            else if (stopMove == 0)
-            {
-                MessageBox.Show("Move First");
-            }
-            else
-            {
-                PlayerTurn++; if (PlayerTurn > 3) { PlayerTurn = 0; }
-                Move = 0;
-                Display();
-            }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
+            int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
+            
+            return "";
         }
 
         public static string[] getBlockId() //Method to call the array PlayerMoney
@@ -197,7 +141,9 @@ namespace MainMenu
 
       // }
 
-        private void button1_Click_1(object sender, EventArgs e)
+      //Buttons________________________________________________________________________________________:)
+
+        private void button1_Click_1(object sender, EventArgs e) //Debug Button 
         {
             for(int i = 0; i < 39; i++ )
             {
@@ -205,5 +151,69 @@ namespace MainMenu
             }
             
         }
+
+        private void btnNext_Click(object sender, EventArgs e) //Next Button
+        {
+            if (Move == 0)
+            {
+                MessageBox.Show("RollDice ");
+            }
+            else if (stopMove == 0)
+            {
+                MessageBox.Show("Move First");
+            }
+            else
+            {
+                PlayerTurn++; if (PlayerTurn > 3) { PlayerTurn = 0; }
+                Move = 0;
+                Display();
+            }
+        }
+
+        private void TestCaseButton_Click(object sender, EventArgs e) //Move Button
+        {
+
+
+            if (Move == 0)
+            {
+                MessageBox.Show("RollDice ");
+            }
+            else if (stopMove == 1)
+            {
+                MessageBox.Show("Cheater Can not Move more than one time! ");
+                stopMove = 0;
+                Move = 0;
+                PlayerTurn++; if (PlayerTurn > 3) { PlayerTurn = 0; }
+                Display();
+
+            }
+            else if (stopMove == 0)
+            {
+                PlayerMove();
+                MoveSprte();
+                Display();
+                stopMove = 1;
+            }
+
+        }
+
+        private void btnDice_Click(object sender, EventArgs e) //Dice Button 
+        {
+            Dice(); //Calls Dice Function 
+            Display(); //Calls the Display Function
+        }
+
+        private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e) //Goes back to MainMenu
+        {
+            this.Hide();
+            MainMenu mm = new MainMenu();
+            mm.ShowDialog();
+        }
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e) //Close Button Menu strip
+        {
+            Close();
+
+        }
+      
     }
 }

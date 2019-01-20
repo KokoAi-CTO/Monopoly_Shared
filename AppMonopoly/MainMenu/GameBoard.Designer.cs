@@ -326,7 +326,7 @@
             // 
             this.SpritCart.BackColor = System.Drawing.Color.Transparent;
             this.SpritCart.Image = ((System.Drawing.Image)(resources.GetObject("SpritCart.Image")));
-            this.SpritCart.Location = new System.Drawing.Point(766, 584);
+            this.SpritCart.Location = new System.Drawing.Point(775, 533);
             this.SpritCart.Name = "SpritCart";
             this.SpritCart.Size = new System.Drawing.Size(76, 63);
             this.SpritCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -347,7 +347,7 @@
             // 
             this.SpriteHat.BackColor = System.Drawing.Color.Transparent;
             this.SpriteHat.Image = ((System.Drawing.Image)(resources.GetObject("SpriteHat.Image")));
-            this.SpriteHat.Location = new System.Drawing.Point(766, 536);
+            this.SpriteHat.Location = new System.Drawing.Point(775, 440);
             this.SpriteHat.Name = "SpriteHat";
             this.SpriteHat.Size = new System.Drawing.Size(76, 66);
             this.SpriteHat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -358,19 +358,18 @@
             // 
             this.SpriteShoe.BackColor = System.Drawing.Color.Transparent;
             this.SpriteShoe.Image = ((System.Drawing.Image)(resources.GetObject("SpriteShoe.Image")));
-            this.SpriteShoe.Location = new System.Drawing.Point(766, 458);
+            this.SpriteShoe.Location = new System.Drawing.Point(775, 602);
             this.SpriteShoe.Name = "SpriteShoe";
             this.SpriteShoe.Size = new System.Drawing.Size(76, 72);
             this.SpriteShoe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SpriteShoe.TabIndex = 27;
             this.SpriteShoe.TabStop = false;
-            this.SpriteShoe.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // SpriteCar
             // 
             this.SpriteCar.BackColor = System.Drawing.Color.Transparent;
             this.SpriteCar.Image = ((System.Drawing.Image)(resources.GetObject("SpriteCar.Image")));
-            this.SpriteCar.Location = new System.Drawing.Point(766, 402);
+            this.SpriteCar.Location = new System.Drawing.Point(775, 374);
             this.SpriteCar.Name = "SpriteCar";
             this.SpriteCar.Size = new System.Drawing.Size(76, 60);
             this.SpriteCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -405,7 +404,7 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1172, 760);
+            this.ClientSize = new System.Drawing.Size(1172, 748);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SpriteCar);

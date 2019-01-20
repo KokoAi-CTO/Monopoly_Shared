@@ -17,12 +17,13 @@ namespace MainMenu
         private static string[] PlayerMoney = new string[4]; // Making an array of 4 players
         private int ToExit = 0; //The Loop Var unitl to exit.
         private int NextPlayer = 0; //What player we are in.
+        //private PictureBox[] pictures = new PictureBox[4];
 
         public PlayerInfo()
         {
             InitializeComponent();
         }
-    
+        
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -90,12 +91,14 @@ namespace MainMenu
             else if (checkBox2.Checked)
             {
                 PlayerSprit[NextPlayer] = checkBox2.Text;
+               // pictures[NextPlayer] = InitializeComponent()
                 checkBox2.Visible = false;
                 checkBox2.Checked = false;
             }
             else if (checkBox3.Checked)
             {
                 PlayerSprit[NextPlayer] = checkBox3.Text;
+                
                 checkBox3.Visible = false;
                 checkBox3.Checked = false;
             }
