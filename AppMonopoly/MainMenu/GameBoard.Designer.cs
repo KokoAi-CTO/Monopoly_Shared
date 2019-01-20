@@ -45,7 +45,6 @@
             this.MVaule = new System.Windows.Forms.Label();
             this.lblProperties = new System.Windows.Forms.Label();
             this.lblDiceValue = new System.Windows.Forms.Label();
-            this.TestCaseButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SNVaule = new System.Windows.Forms.Label();
@@ -63,6 +62,10 @@
             this.SpriteCar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnYes = new System.Windows.Forms.Button();
+            this.btnNo = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SpritCart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpriteHat)).BeginInit();
@@ -72,12 +75,12 @@
             // 
             // btnDice
             // 
-            this.btnDice.Location = new System.Drawing.Point(523, 721);
+            this.btnDice.Location = new System.Drawing.Point(507, 721);
             this.btnDice.Margin = new System.Windows.Forms.Padding(2);
             this.btnDice.Name = "btnDice";
-            this.btnDice.Size = new System.Drawing.Size(80, 31);
+            this.btnDice.Size = new System.Drawing.Size(145, 31);
             this.btnDice.TabIndex = 0;
-            this.btnDice.Text = "Roll Dice";
+            this.btnDice.Text = "Roll Dice and Move";
             this.btnDice.UseVisualStyleBackColor = true;
             this.btnDice.Click += new System.EventHandler(this.btnDice_Click);
             // 
@@ -193,7 +196,7 @@
             // 
             this.lblProperties.AutoSize = true;
             this.lblProperties.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProperties.Location = new System.Drawing.Point(20, 482);
+            this.lblProperties.Location = new System.Drawing.Point(11, 507);
             this.lblProperties.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProperties.Name = "lblProperties";
             this.lblProperties.Size = new System.Drawing.Size(167, 24);
@@ -211,16 +214,6 @@
             this.lblDiceValue.TabIndex = 10;
             this.lblDiceValue.Text = "Dice Number Rolled";
             // 
-            // TestCaseButton
-            // 
-            this.TestCaseButton.Location = new System.Drawing.Point(1004, 725);
-            this.TestCaseButton.Name = "TestCaseButton";
-            this.TestCaseButton.Size = new System.Drawing.Size(75, 23);
-            this.TestCaseButton.TabIndex = 12;
-            this.TestCaseButton.Text = "Move";
-            this.TestCaseButton.UseVisualStyleBackColor = true;
-            this.TestCaseButton.Click += new System.EventHandler(this.TestCaseButton_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -234,7 +227,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(971, 536);
+            this.label3.Location = new System.Drawing.Point(12, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 15;
@@ -254,7 +247,7 @@
             // 
             this.PLVaule.AutoSize = true;
             this.PLVaule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PLVaule.Location = new System.Drawing.Point(1092, 536);
+            this.PLVaule.Location = new System.Drawing.Point(125, 208);
             this.PLVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PLVaule.Name = "PLVaule";
             this.PLVaule.Size = new System.Drawing.Size(69, 20);
@@ -264,19 +257,21 @@
             // BLVaule
             // 
             this.BLVaule.AutoSize = true;
-            this.BLVaule.Location = new System.Drawing.Point(1061, 602);
+            this.BLVaule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BLVaule.Location = new System.Drawing.Point(1035, 238);
             this.BLVaule.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BLVaule.Name = "BLVaule";
-            this.BLVaule.Size = new System.Drawing.Size(47, 13);
+            this.BLVaule.Size = new System.Drawing.Size(70, 20);
             this.BLVaule.TabIndex = 18;
             this.BLVaule.Text = "BLVaule";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(972, 602);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(888, 208);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.Size = new System.Drawing.Size(122, 24);
             this.label6.TabIndex = 19;
             this.label6.Text = "Block Loction";
             // 
@@ -326,7 +321,7 @@
             // 
             this.SpritCart.BackColor = System.Drawing.Color.Transparent;
             this.SpritCart.Image = ((System.Drawing.Image)(resources.GetObject("SpritCart.Image")));
-            this.SpritCart.Location = new System.Drawing.Point(775, 533);
+            this.SpritCart.Location = new System.Drawing.Point(775, 512);
             this.SpritCart.Name = "SpritCart";
             this.SpritCart.Size = new System.Drawing.Size(76, 63);
             this.SpritCart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -389,13 +384,53 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(37, 703);
+            this.button1.Location = new System.Drawing.Point(8, 721);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 30;
             this.button1.Text = "Debug";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(919, 70);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(174, 31);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Bank Manger";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(896, 243);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 13);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Would you Like to Buy";
+            // 
+            // btnYes
+            // 
+            this.btnYes.Location = new System.Drawing.Point(1039, 483);
+            this.btnYes.Name = "btnYes";
+            this.btnYes.Size = new System.Drawing.Size(75, 23);
+            this.btnYes.TabIndex = 33;
+            this.btnYes.Text = "Yes";
+            this.btnYes.UseVisualStyleBackColor = true;
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
+            // 
+            // btnNo
+            // 
+            this.btnNo.Location = new System.Drawing.Point(925, 483);
+            this.btnNo.Name = "btnNo";
+            this.btnNo.Size = new System.Drawing.Size(75, 23);
+            this.btnNo.TabIndex = 34;
+            this.btnNo.Text = "No";
+            this.btnNo.UseVisualStyleBackColor = true;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
             // GameBoard
             // 
@@ -405,6 +440,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1172, 748);
+            this.Controls.Add(this.btnNo);
+            this.Controls.Add(this.btnYes);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SpriteCar);
@@ -422,7 +461,6 @@
             this.Controls.Add(this.SNVaule);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TestCaseButton);
             this.Controls.Add(this.lblDiceValue);
             this.Controls.Add(this.lblProperties);
             this.Controls.Add(this.MVaule);
@@ -462,7 +500,6 @@
         private System.Windows.Forms.Label lblDiceValue;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mainMenuToolStripMenuItem;
-        private System.Windows.Forms.Button TestCaseButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label SNVaule;
@@ -480,5 +517,9 @@
         private System.Windows.Forms.PictureBox SpriteCar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnYes;
+        private System.Windows.Forms.Button btnNo;
     }
 }
