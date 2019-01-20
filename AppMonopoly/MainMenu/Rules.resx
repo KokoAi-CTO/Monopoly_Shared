@@ -120,4 +120,16 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label1.Text" xml:space="preserve">
+    <value>4 player game
+Each player starts with $1500
+If you roll doubles on the dice, you may roll again
+Pick up One Chance card or Community Chest card, when you land on either of those spaces 
+Can only keep “Get out of jail” card for later use
+If you are in jail you have to roll doubles on your first turn, if you do not roll doubles, on your second turn you can either try to roll doubles again or pay a fee or $50, and you can only roll on your next turn
+When you pass “Go” receive $200 from the bank
+Give your money to the bank when paying for property
+When you land on the property of another player, you must pay rent
+When you land on a property that is not owned, you can either buy it or put it up for an auction that you cannot participate in</value>
+  </data>
 </root>

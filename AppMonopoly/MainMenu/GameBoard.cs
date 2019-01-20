@@ -7,32 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 
 namespace MainMenu
 {
     public partial class GameBoard : Form
     {
 
-        private int[] Ploc = new int[4];
-        private int PlayerTurn = 0;
+        private int[] Ploc = new int[4]; // Store the Loction of the Player in a Array
+        private int PlayerTurn = 0; // What Player we are on. 
 
-        private int Move = 0;
-        private int stopMove = 0;
+        private int Move = 0; // How mush to move
+        private int stopMove = 0; //Stop the Player form moveing agin.
+        private 
 
 
+        //Array of Coordinates
         private int[] xcoordinate = { 1044, 928, 870, 812, 754, 694, 636, 578, 520, 462, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 462, 520, 578, 636, 694, 754, 812, 870, 928, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044};
         private int[] ycoordinate = { 766, 766, 766, 766, 766, 766, 766, 766, 766, 766, 766, 686, 625, 560, 498, 433, 368, 303, 238, 173, 108, 108, 108, 108, 108, 108, 108, 108, 108, 108, 108, 173, 238, 303, 368, 433, 498, 560, 625, 686, 766 };
 
-
+        //Get Player Name from the Methods
         string[] playermoney = PlayerInfo.getPlayerMoney();
         string[] playersprits = PlayerInfo.getPlayerSprit();
         string[] playernames = PlayerInfo.getplayernames();
 
+        string[] BlockId = getBlockId();
+        //string[] BlockRent = getBlockRent();
+
         public GameBoard()
         {
             InitializeComponent();
+            getBlockId();
             Display();
+            
 
         }
 
@@ -41,13 +48,10 @@ namespace MainMenu
 
         }
 
-        private void btnDice_Click(object sender, EventArgs e)
+        private void btnDice_Click(object sender, EventArgs e) 
         {
-
-            Dice();
-            Display();
-
-
+            Dice(); //Calls Dice Function 
+            Display(); //Calls the Display Function
         }
 
 
@@ -58,41 +62,42 @@ namespace MainMenu
 
         }
 
-        private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e) //Goes back to MainMenu
         {
             this.Hide();
             MainMenu mm = new MainMenu();
             mm.ShowDialog();
         }
 
-        private void TestCaseButton_Click(object sender, EventArgs e)
+        private void TestCaseButton_Click(object sender, EventArgs e) 
         {
-            
-            if(stopMove == 0)
-            {
-                PlayerMove();
-                MoveSprte();
-                Display();
-                stopMove = 1;
-            }
-            else if(Move == 0)
+
+
+            if (Move == 0)
             {
                 MessageBox.Show("RollDice ");
             }
-            else
+            else if (stopMove == 1)
             {
                 MessageBox.Show("Cheater Can not Move more than one time! ");
                 stopMove = 0;
                 Move = 0;
                 PlayerTurn++; if (PlayerTurn > 3) { PlayerTurn = 0; }
                 Display();
-               
+
             }
-          
+            else if(stopMove == 0)
+            {
+                PlayerMove();
+                MoveSprte();
+                Display();
+                stopMove = 1;
+            }
+
 
         }
 
-        public int Dice()
+        public int Dice() //The Dice function 
         {
             //show the dice
             Random rdm = new Random();
@@ -104,9 +109,8 @@ namespace MainMenu
             return Move;
         }
 
-        public string Display()
+        public string Display() //Change the Text
         {
-            
 
             DCVaule.Text = Move.ToString();
             PLVaule.Text = Ploc[PlayerTurn].ToString();
@@ -114,11 +118,11 @@ namespace MainMenu
             MVaule.Text = playermoney[PlayerTurn];
             SNVaule.Text = playersprits[PlayerTurn];
             TrVaule.Text = (PlayerTurn + 1).ToString();
-            
+            stopMove = 0;
             return "";
         }
 
-        public string PlayerMove()
+        public string PlayerMove() //Moves the Player
         {
             Ploc[PlayerTurn] = Ploc[PlayerTurn] + Move;
             //make sure not to go beyond the board
@@ -128,20 +132,27 @@ namespace MainMenu
         }
         public string MoveSprte()
         {
-            int XValue = 923; 
-            int YValue = 788;
-
-            HatSprite.Location = new Point(XValue, YValue);
+            int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
+            int XValue = xcoordinate[MVaule];
+            int YValue = ycoordinate[MVaule]; 
+            
+            SpritCart.Location = new Point(XValue, YValue); 
             return "";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
+
+        }
+
+        private void btnNext_Click(object sender, EventArgs e) 
+        {
             if (Move == 0)
             {
                 MessageBox.Show("RollDice ");
             }
-            else if(stopMove == 0)
+            else if (stopMove == 0)
             {
                 MessageBox.Show("Move First");
             }
@@ -151,6 +162,48 @@ namespace MainMenu
                 Move = 0;
                 Display();
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public static string[] getBlockId() //Method to call the array PlayerMoney
+        {
+            StreamReader sr = new StreamReader(@"BlockID.txt");
+            int Length = Convert.ToInt16(sr.ReadLine());
+            string[] BlockID = new string[Length];
+            for(int i = 0; i < Length; i++)
+            {
+                BlockID[i] = sr.ReadLine(); 
+            }
+            sr.Close();
+            return BlockID;
+
+        }
+
+        //public static string[] getBlockRent() //Method to call the array PlayerMoney
+       // {
+            /*StreamReader sr = new StreamReader("BlockRent");
+            int Length = Convert.ToInt16(sr.ReadLine());
+            string[] BlockRent = new string[Length];
+            for (int i = 0; i < Length; i++)
+            {
+                BlockRent[i] = sr.ReadLine();
+            }
+            sr.Close();
+            return BlockRent;*/
+
+      // }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            for(int i = 0; i < 39; i++ )
+            {
+                MessageBox.Show("Here are" + BlockId[i]);
+            }
+            
         }
     }
 }

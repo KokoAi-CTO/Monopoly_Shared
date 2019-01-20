@@ -12,20 +12,17 @@ namespace MainMenu
 {
     public partial class PlayerInfo : Form
     {
-        private static string[] playerNames = new string[4];
-        private static string[] PlayerSprit = new string[4];
-        private static string[] PlayerMoney = new string[4];
-        private int ToExit = 0;
-        private int NextPlayer = 0;
+        private static string[] playerNames = new string[4]; // Making an array of 4 players
+        private static string[] PlayerSprit = new string[4]; // Making an array of 4 players
+        private static string[] PlayerMoney = new string[4]; // Making an array of 4 players
+        private int ToExit = 0; //The Loop Var unitl to exit.
+        private int NextPlayer = 0; //What player we are in.
 
         public PlayerInfo()
         {
             InitializeComponent();
-            //GetUserInputs();
-
         }
-     
-
+    
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -35,14 +32,14 @@ namespace MainMenu
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            Close(); //Close the Programe
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
             if (PlayerBox1.Text == "")
             {
-                MessageBox.Show("Enter Something");
+                MessageBox.Show("Enter Something"); 
             }
             else if (!(CheckBox1.Checked || checkBox2.Checked || checkBox3.Checked || checkBox4.Checked))
             {
@@ -73,16 +70,17 @@ namespace MainMenu
 
         }
 
-        public  string GetUserInputs()
+        public string GetUserInputs() //Method to Get User Inputs Form a One Text Box and 4 CheckBox.
         {
 
-           int LoopNum = 0;
+           int PlayerNumber = 0; //Method to Get User Inputs Form a One Text Box and 4 CheckBox.
 
-           LoopNum = (NextPlayer + 2);
+            PlayerNumber = (NextPlayer + 2);
            playerNames[NextPlayer] = PlayerBox1.Text;
            PlayerBox1.Text = null;
-           lblWhatPlayer.Text = LoopNum.ToString();
+           lblWhatPlayer.Text = PlayerNumber.ToString();
 
+            //This Code Below is to Check what Button is clicked 
             if (CheckBox1.Checked)
             {
                 PlayerSprit[NextPlayer] = CheckBox1.Text;
@@ -108,41 +106,34 @@ namespace MainMenu
                 checkBox4.Checked = false;
             }
 
-            PlayerMoney[NextPlayer] = "1500";
+            PlayerMoney[NextPlayer] = "1500"; //Set Players Money
 
             return "";
           
             
         }
 
-
-        public static string[] getplayernames()
+        public static string[] getplayernames()  //Method to call the array PlayerName
         {
             
             return playerNames;
-
-
-
         }
 
-        public static string[] getPlayerSprit()
+        public static string[] getPlayerSprit() //Method to call the array PlayerSprit
         {
-
             return PlayerSprit;
 
-
-
         }
 
-        public static string[] getPlayerMoney()
+        public static string[] getPlayerMoney() //Method to call the array PlayerMoney
         {
 
             return PlayerMoney;
 
-
-
         }
 
+
+       
     }
 }
 

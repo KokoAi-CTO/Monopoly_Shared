@@ -52,8 +52,6 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.lblWhatPlayer = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -158,12 +156,12 @@
             // lblPlyrnames
             // 
             this.lblPlyrnames.AutoSize = true;
-            this.lblPlyrnames.Location = new System.Drawing.Point(169, 32);
+            this.lblPlyrnames.Location = new System.Drawing.Point(198, 35);
             this.lblPlyrnames.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPlyrnames.Name = "lblPlyrnames";
-            this.lblPlyrnames.Size = new System.Drawing.Size(225, 13);
+            this.lblPlyrnames.Size = new System.Drawing.Size(133, 13);
             this.lblPlyrnames.TabIndex = 9;
-            this.lblPlyrnames.Text = "ENTER PLAYER NAMES-- Minimum 2 players";
+            this.lblPlyrnames.Text = "ENTER PLAYER NAMES ";
             // 
             // PlayerBox1
             // 
@@ -208,7 +206,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(250, 185);
+            this.pictureBox3.Location = new System.Drawing.Point(261, 185);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(67, 45);
@@ -219,7 +217,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(364, 184);
+            this.pictureBox4.Location = new System.Drawing.Point(384, 184);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(67, 47);
@@ -251,7 +249,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(250, 163);
+            this.checkBox3.Location = new System.Drawing.Point(261, 162);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(70, 17);
             this.checkBox3.TabIndex = 21;
@@ -261,7 +259,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(364, 163);
+            this.checkBox4.Location = new System.Drawing.Point(384, 162);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(46, 17);
             this.checkBox4.TabIndex = 22;
@@ -278,35 +276,11 @@
             this.lblWhatPlayer.TabIndex = 23;
             this.lblWhatPlayer.Text = "1";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(391, 91);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 24;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(391, 114);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 25;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
             // PlayerInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 291);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lblWhatPlayer);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
@@ -362,7 +336,5 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.Label lblWhatPlayer;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
