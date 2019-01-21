@@ -21,7 +21,7 @@ namespace MainMenu
 
         //____________________Just a Lot of Arrays_________________________________________________:)
         private int[] Ploc = new int[4]; // Store the Loction of the Player in a Array
-       
+
         private PictureBox[] pictures = new PictureBox[4]; //This is an array of Objgets wish are PictureBox Using this to know 
 
         //Array of Coordinates
@@ -32,7 +32,7 @@ namespace MainMenu
         string[] playermoney = PlayerInfo.getPlayerMoney();
         string[] playersprits = PlayerInfo.getPlayerSprit();
         string[] playernames = PlayerInfo.getplayernames();
-        string[,] playerOwned = new string[4, 16]; 
+        string[,] playerOwned = new string[4, 16];
 
         //Game Boarde Data 
         string[] BlockId = getBlockId();
@@ -43,29 +43,32 @@ namespace MainMenu
         //_______________________________________________________________________________________________________________
         public GameBoard()
         {
+            //Clear();
             InitializeComponent();
             InitializeSpritesArray();
             getBlockId();
             Display();
             btnYes.Hide();
             btnNo.Hide();
-           // btnDebug.Hide();
+            WYLB.Hide();
+            BLVaule.Hide();
+            // btnDebug.Hide();
         }
-        private void InitializeSpritesArray() 
+        private void InitializeSpritesArray()
         {
             string spritename;
             for (int i = 0; i < 4; i++) //aessing PlayersSprits array to Objget Pictures Array 
             {
                 spritename = playersprits[i];
                 switch (spritename) {
-                    case "Simle":                
-                    pictures[i] = SpriteSimle; break;
-                    case "Sim": 
-                    pictures[i] = SpritSim; break;
+                    case "Simle":
+                        pictures[i] = SpriteSimle; break;
+                    case "Sim":
+                        pictures[i] = SpritSim; break;
                     case "Cry":
-                    pictures[i] = SpriteCry; break;
+                        pictures[i] = SpriteCry; break;
                     case "Love":
-                    pictures[i] = SpriteLove; break;
+                        pictures[i] = SpriteLove; break;
 
                 }
             }
@@ -79,7 +82,7 @@ namespace MainMenu
 
             //Run the dice
             int Dice1 = rdm.Next(1, 7);
-             Move = Dice1 ;
+            Move = Dice1;
             return Move;
         }
 
@@ -93,7 +96,8 @@ namespace MainMenu
             SNVaule.Text = playersprits[PlayerTurn];
             TrVaule.Text = (PlayerTurn + 1).ToString();
             BLVaule.Text = BlockId[WVaule];
-            for(int i = 0; i < 15; i++)
+            lbn2BlVaule.Text = BlockId[WVaule];
+            for (int i = 0; i < 15; i++)
             {
                 if (!(playerOwned[PlayerTurn, i] == null))
                 {
@@ -101,16 +105,29 @@ namespace MainMenu
 
                 }
             }
+            string[] enter = { "", "", "", "" };
+            for (int i = 0; i < 4; i++)
+            {
+                if (i == 3)
+                {
+                    enter[i] = "\n";
+                }
+                lbnScores.Text += "| " + playernames[i] + " \t|\t ";
+                lbnMony.Text += "| " + playermoney[i] + " \t|\t ";
+                lbnPLoc.Text += "| " + Ploc[i] + " \t|\t ";
+            }
 
             return "";
         }
+
+
 
         public string PlayerMove() //Moves the Player
         {
             Ploc[PlayerTurn] = Ploc[PlayerTurn] + Move;
             //make sure not to go beyond the board
             if (Ploc[PlayerTurn] > 15) { Ploc[PlayerTurn] = Ploc[PlayerTurn] - 16; }
-             
+
             return "";
         }
 
@@ -118,9 +135,9 @@ namespace MainMenu
         {
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int XValue = xcoordinate[MVaule];
-            int YValue = ycoordinate[MVaule]; 
-            
-            pictures[PlayerTurn].Location = new Point(XValue, YValue); 
+            int YValue = ycoordinate[MVaule];
+
+            pictures[PlayerTurn].Location = new Point(XValue, YValue);
             return "";
         }
 
@@ -132,37 +149,58 @@ namespace MainMenu
             {
                 playerOwned[PlayerTurn, MVaule] = BlockId[MVaule]; // Save this card in to Player Owned
                 OwnedList[MVaule] = Convert.ToString(PlayerTurn);
+
                 PLM = Convert.ToInt16(playermoney[PlayerTurn]) - Convert.ToInt16(BlockCost[MVaule]);
                 playermoney[PlayerTurn] = Convert.ToString(PLM);
-                MessageBox.Show("You Have Payed" + BlockCost[MVaule]);
+                MessageBox.Show("You Have Payed $" + BlockCost[MVaule]);
                 Display();
             }
 
             return "";
         }
-
-        public string CheckBlock() //Check were Current Player is and if It OWned or not
+        public string GetMoneyBlock()
         {
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
             
-            if (playerOwned[PlayerTurn,MVaule] == BlockId[MVaule] ) //Checks if Current Player Owns this
+           PLM = Convert.ToInt16(playermoney[PlayerTurn]) - Convert.ToInt16(BlockCost[MVaule]);
+           playermoney[PlayerTurn] = Convert.ToString(PLM);
+           MessageBox.Show("Mr Moniaga has charged you $" + BlockCost[MVaule] + " For you Water bill! :)");
+           Clear();
+           Display();
+            
+
+            return "";
+        }
+        public string CheckBlock() //Check were Current Player is and if It OWned or not
+        {
+            int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
+            int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
+
+            if (playerOwned[PlayerTurn, MVaule] == BlockId[MVaule]) //Checks if Current Player Owns this
             {
-                MessageBox.Show("You alReady Own This");
+                MessageBox.Show("You Allready Own this Welcome Back");
             }
-            else if(!(OwnedList[MVaule] == BlockId[MVaule]))//Charege any other Player
+            else if (!(OwnedList[MVaule] == BlockId[MVaule]))//Charege any other Player
             {
                 ChargePlayer(); // Calling Methods
             }
+            else if (Ploc[PlayerTurn] == 3 || Ploc[PlayerTurn] == 9 || Ploc[PlayerTurn] == 14)
+            {
+                GetMoneyBlock();
+            }
             else if (!(Convert.ToInt16(BlockRent[MVaule]) == 0))//Ask to buy a House
             {
+                WYLB.Show();
+                BLVaule.Show();
                 btnYes.Show();
                 btnNo.Show();
-                
+
             }
 
             return "";
         }
+        
 
         public string ChargePlayer() //Method To Charge Player Based on what 
         {
@@ -171,13 +209,14 @@ namespace MainMenu
             int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
             int ToPLM = Convert.ToInt16(playermoney[ToWho]);
 
-            MessageBox.Show("Hey " + playernames[ToWho] + "Mr" + playernames[PlayerTurn] + "Has Landed on you Land");
+            MessageBox.Show("Hey " + playernames[ToWho] + " !" +"\n"+ playernames[PlayerTurn] + " Has landed on you Propertie." + BlockId[MVaule]);
 
             PLM = Convert.ToInt16(playermoney[PlayerTurn]) - Convert.ToInt16(BlockRent[MVaule]);
             playermoney[PlayerTurn] = Convert.ToString(PLM);
             ToPLM = Convert.ToInt16(playermoney[ToWho]) + Convert.ToInt16(BlockRent[MVaule]);
             playermoney[ToWho] = Convert.ToString(ToPLM);
-            MessageBox.Show(playernames[ToWho] + " You Got " + BlockRent[MVaule] + "And you Blance is " + playermoney[ToWho]);
+            MessageBox.Show(playernames[ToWho] + " You Got $" + BlockRent[MVaule] + " and you balance is $" + playermoney[ToWho]);
+            MessageBox.Show(playernames[PlayerTurn] + " You Payed $" + BlockRent[MVaule] + " and you balance is $" + playermoney[PlayerTurn]);
             return "";
         }
 
@@ -192,10 +231,11 @@ namespace MainMenu
             return ""; 
         }
 
+       
 
 
-       //Get Meta Data BlockID BlockRent BlockCost_______________________________________________________
-            public static string[] getBlockId() //Method to call the array PlayerMoney
+    //Get Meta Data BlockID BlockRent BlockCost_______________________________________________________
+    public static string[] getBlockId() //Method to call the array PlayerMoney
         {
             StreamReader sr = new StreamReader(@"BlockID.txt");
             int Length = Convert.ToInt16(sr.ReadLine());
@@ -237,6 +277,16 @@ namespace MainMenu
 
         }
 
+        public  string Clear() //Method to call the array to Get RentPrice from Text File
+        {
+
+            lbnScores.Text = null ;
+            lbnMony.Text = null ;
+            lbnPLoc.Text = null ;
+            OPVaule.Text = null;
+            return "";
+
+        }
         //Buttons_________________________________________________________________________________________________________________________:)
 
         private void button1_Click_1(object sender, EventArgs e) //Debug Button 
@@ -248,7 +298,7 @@ namespace MainMenu
         {
             if (Move == 0)
             {
-                MessageBox.Show("RollDice ");
+                MessageBox.Show("RollDice");
             }
             else
             {
@@ -258,11 +308,15 @@ namespace MainMenu
                 Display();
                 btnYes.Hide();
                 btnNo.Hide();
+                WYLB.Hide();
+                BLVaule.Hide();
+                Clear();
+                Display();
                 OPVaule.Text = "";
             }
         }
-
-        private void btnDice_Click(object sender, EventArgs e) //Dice and Move Button 
+       
+            private void btnDice_Click(object sender, EventArgs e) //Dice and Move Button 
         {
             if(stopMove == 0)
             {
@@ -271,12 +325,14 @@ namespace MainMenu
                 PlayerMove();
                 MoveSprte();
                 CheckBlock();
+                Clear();
+              
                 Display(); //Calls the Display Function
                 
             }
             else if(stopMove == 1)
             {
-                MessageBox.Show("Cheater You can not Roll Dice");
+                MessageBox.Show(playernames[PlayerTurn] + " You Cheater Just Can Not Roll Dice Agin");
             }
            
         }
@@ -296,15 +352,28 @@ namespace MainMenu
         private void btnYes_Click(object sender, EventArgs e) //Yes Button
         {
             DoBlock();
+            Clear();
+            Display();
             btnYes.Hide();
             btnNo.Hide();
+            WYLB.Hide();
+            BLVaule.Hide();
         }
 
         private void btnNo_Click(object sender, EventArgs e) //No Button
         {
-            MessageBox.Show("Allright");
+            MessageBox.Show("Allright.:(");
+            Clear();
+            Display();
             btnYes.Hide();
             btnNo.Hide();
+            WYLB.Hide();
+            BLVaule.Hide();
+        }
+
+        private void SNVaule_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

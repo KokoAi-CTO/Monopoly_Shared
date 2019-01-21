@@ -152,11 +152,11 @@
             // lblPly1
             // 
             this.lblPly1.AutoSize = true;
-            this.lblPly1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPly1.Location = new System.Drawing.Point(377, 122);
+            this.lblPly1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPly1.Location = new System.Drawing.Point(384, 124);
             this.lblPly1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPly1.Name = "lblPly1";
-            this.lblPly1.Size = new System.Drawing.Size(69, 19);
+            this.lblPly1.Size = new System.Drawing.Size(77, 24);
             this.lblPly1.TabIndex = 5;
             this.lblPly1.Text = "Player #";
             // 
@@ -173,20 +173,20 @@
             // 
             // PlayerBox1
             // 
-            this.PlayerBox1.Location = new System.Drawing.Point(242, 184);
+            this.PlayerBox1.Location = new System.Drawing.Point(369, 176);
             this.PlayerBox1.Margin = new System.Windows.Forms.Padding(2);
             this.PlayerBox1.Name = "PlayerBox1";
-            this.PlayerBox1.Size = new System.Drawing.Size(433, 20);
+            this.PlayerBox1.Size = new System.Drawing.Size(118, 20);
             this.PlayerBox1.TabIndex = 10;
             // 
             // lblsprite
             // 
             this.lblsprite.AutoSize = true;
-            this.lblsprite.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsprite.Location = new System.Drawing.Point(312, 226);
+            this.lblsprite.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsprite.Location = new System.Drawing.Point(283, 226);
             this.lblsprite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblsprite.Name = "lblsprite";
-            this.lblsprite.Size = new System.Drawing.Size(265, 19);
+            this.lblsprite.Size = new System.Drawing.Size(335, 24);
             this.lblsprite.TabIndex = 14;
             this.lblsprite.Text = "SELECT SPRITE FOR EACH PLAYER";
             // 
@@ -238,11 +238,11 @@
             // lblWhatPlayer
             // 
             this.lblWhatPlayer.AutoSize = true;
-            this.lblWhatPlayer.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWhatPlayer.Location = new System.Drawing.Point(460, 122);
+            this.lblWhatPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWhatPlayer.Location = new System.Drawing.Point(467, 124);
             this.lblWhatPlayer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWhatPlayer.Name = "lblWhatPlayer";
-            this.lblWhatPlayer.Size = new System.Drawing.Size(19, 19);
+            this.lblWhatPlayer.Size = new System.Drawing.Size(20, 24);
             this.lblWhatPlayer.TabIndex = 23;
             this.lblWhatPlayer.Text = "1";
             // 
