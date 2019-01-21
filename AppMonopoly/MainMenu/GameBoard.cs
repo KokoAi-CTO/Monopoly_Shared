@@ -77,8 +77,7 @@ namespace MainMenu
 
             //Run the dice
             int Dice1 = rdm.Next(1, 7);
-            int Dice2 = rdm.Next(1, 7);
-             Move = Dice1 + Dice2;
+             Move = Dice1 ;
             return Move;
         }
 
@@ -113,7 +112,7 @@ namespace MainMenu
             return "";
         }
 
-        public string MoveSprte()
+        public string MoveSprte() //Move the Sprit Image Based On Player Location 
         {
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int XValue = xcoordinate[MVaule];
