@@ -13,15 +13,16 @@ namespace MainMenu
 {
     public partial class GameBoard : Form
     {
+        private int PlayerTurn = 0; // What Player we are on. This is the Index of What Player we are on this is to give like the I in a For Loop
+        private int Move = 0; // How mush to move
+
+        //Antiy Cheat Var haha:)
+        private int stopMove = 0; //Stop the Player form moveing agin.
+
         //____________________Just a Lot of Arrays_________________________________________________:)
         private int[] Ploc = new int[4]; // Store the Loction of the Player in a Array
-        //private string[,] PlayersBlock= new string[];
-        private int PlayerTurn = 0; // What Player we are on. 
-
-        private int Move = 0; // How mush to move
-        private int stopMove = 0; //Stop the Player form moveing agin.
-        private PictureBox[] pictures = new PictureBox[4];
-
+       
+        private PictureBox[] pictures = new PictureBox[4]; //This is an array of Objgets wish are PictureBox Using this to know 
 
         //Array of Coordinates
         private int[] xcoordinate = { 786, 786, 578, 478, 368, 368, 368, 368, 368, 473, 577, 684, 786, 786, 786, 786 };
@@ -33,10 +34,11 @@ namespace MainMenu
         string[] playernames = PlayerInfo.getplayernames();
         string[,] playerOwned = new string[4, 16]; 
 
+        //Game Boarde Data 
         string[] BlockId = getBlockId();
         string[] BlockRent = getBlockRent();
+        string[] BlockCost = getBlockCost();
         string[] OwnedList = getBlockId();
-
 
         //_______________________________________________________________________________________________________________
         public GameBoard()
@@ -47,21 +49,21 @@ namespace MainMenu
             Display();
             btnYes.Hide();
             btnNo.Hide();
-            btnDebug.Hide();
+           // btnDebug.Hide();
         }
         private void InitializeSpritesArray() 
         {
             string spritename;
-            for (int i = 0; i <4; i++) //aessing PlayersSprits array to Objget Pictures Array 
+            for (int i = 0; i < 4; i++) //aessing PlayersSprits array to Objget Pictures Array 
             {
                 spritename = playersprits[i];
                 switch (spritename) {
                     case "Simle":                
                     pictures[i] = SpriteSimle; break;
                     case "Sim": 
-                    pictures[i] = SpriteCry; break;
-                    case "Cry":
                     pictures[i] = SpritSim; break;
+                    case "Cry":
+                    pictures[i] = SpriteCry; break;
                     case "Love":
                     pictures[i] = SpriteLove; break;
 
@@ -126,20 +128,20 @@ namespace MainMenu
         {
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
-            if (!(Convert.ToInt16(BlockRent[MVaule]) == 0))
+            if (!(Convert.ToInt16(BlockCost[MVaule]) == 0))
             {
                 playerOwned[PlayerTurn, MVaule] = BlockId[MVaule]; // Save this card in to Player Owned
                 OwnedList[MVaule] = Convert.ToString(PlayerTurn);
-                PLM = Convert.ToInt16(playermoney[PlayerTurn]) - Convert.ToInt16(BlockRent[MVaule]);
+                PLM = Convert.ToInt16(playermoney[PlayerTurn]) - Convert.ToInt16(BlockCost[MVaule]);
                 playermoney[PlayerTurn] = Convert.ToString(PLM);
+                MessageBox.Show("You Have Payed" + BlockCost[MVaule]);
                 Display();
             }
-            
-            
+
             return "";
         }
 
-        public string CheckBlock() //Check were Current Player is 
+        public string CheckBlock() //Check were Current Player is and if It OWned or not
         {
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
@@ -148,9 +150,9 @@ namespace MainMenu
             {
                 MessageBox.Show("You alReady Own This");
             }
-            else if(!(OwnedList[MVaule] == BlockId[MVaule]))
+            else if(!(OwnedList[MVaule] == BlockId[MVaule]))//Charege any other Player
             {
-                ChargePlayer();
+                ChargePlayer(); // Calling Methods
             }
             else if (!(Convert.ToInt16(BlockRent[MVaule]) == 0))//Ask to buy a House
             {
@@ -162,9 +164,8 @@ namespace MainMenu
             return "";
         }
 
-        public string ChargePlayer()
+        public string ChargePlayer() //Method To Charge Player Based on what 
         {
-            
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int ToWho = int.Parse(OwnedList[MVaule]);
             int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
@@ -180,9 +181,21 @@ namespace MainMenu
             return "";
         }
 
+        public string CheckScore() //Method To Check the Score to Diceded who is gone win  
+        {
+
+            string maxValue = playermoney.Max(); //sorry used prebuild function to check for the highest Value 
+            int maxIndex = playermoney.ToList().IndexOf(maxValue);
+            MessageBox.Show(playernames[maxIndex] + "Has Won" + " With " + playermoney[maxIndex] );
+            MessageBox.Show("Here is the Score Broade");
+            MessageBox.Show(playernames[0] + playernames[1] + playernames[2] + playernames[3] + "\n" + playermoney[0] + playermoney[1] + playermoney[2] + playermoney[3]);
+            return ""; 
+        }
 
 
-        public static string[] getBlockId() //Method to call the array PlayerMoney
+
+       //Get Meta Data BlockID BlockRent BlockCost_______________________________________________________
+            public static string[] getBlockId() //Method to call the array PlayerMoney
         {
             StreamReader sr = new StreamReader(@"BlockID.txt");
             int Length = Convert.ToInt16(sr.ReadLine());
@@ -212,15 +225,15 @@ namespace MainMenu
 
         public static string[] getBlockCost() //Method to call the array to Get RentPrice from Text File
         {
-            StreamReader sr = new StreamReader("BlockRent.txt");
+            StreamReader sr = new StreamReader("BlockCost.txt");
             int Length = Convert.ToInt16(sr.ReadLine());
-            string[] BlockRent = new string[Length];
+            string[] BlockCost = new string[Length];
             for (int i = 0; i < Length; i++)
             {
-                BlockRent[i] = sr.ReadLine();
+                BlockCost[i] = sr.ReadLine();
             }
             sr.Close();
-            return BlockRent;
+            return BlockCost;
 
         }
 
@@ -228,11 +241,7 @@ namespace MainMenu
 
         private void button1_Click_1(object sender, EventArgs e) //Debug Button 
         {
-            for(int i = 0; i < 40; i++ )
-            {
-                MessageBox.Show("Here are # " +i +": "+ BlockId[i]);
-            }
-           // MessageBox.Show("Here are #: " + BlockId[0]);
+            CheckScore();
         }
 
         private void btnNext_Click(object sender, EventArgs e) //Next Button
@@ -247,6 +256,8 @@ namespace MainMenu
                 Move = 0;
                 stopMove = 0;
                 Display();
+                btnYes.Hide();
+                btnNo.Hide();
                 OPVaule.Text = "";
             }
         }
@@ -285,8 +296,6 @@ namespace MainMenu
         private void btnYes_Click(object sender, EventArgs e) //Yes Button
         {
             DoBlock();
-            int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
-            MessageBox.Show("You Have Been Charched $" + BlockRent[MVaule]);
             btnYes.Hide();
             btnNo.Hide();
         }
