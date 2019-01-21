@@ -117,19 +117,51 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnBack.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAA+cAAACFCAYAAAA5KolwAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAylJREFUeF7t1zEBADAMBKG6fP9KUhm3MCCCd9sBAAAAHTkHAACAmJwDAABATM4B
+        AAAgJucAAAAQk3MAAACIyTkAAADE5BwAAABicg4AAAAxOQcAAICYnAMAAEBMzgEAACAm5wAAABCTcwAA
+        AIjJOQAAAMTkHAAAAGJyDgAAADE5BwAAgJicAwAAQEzOAQAAICbnAAAAEJNzAAAAiMk5AAAAxOQcAAAA
+        YnIOAAAAMTkHAACAmJwDAABATM4BAAAgJucAAAAQk3MAAACIyTkAAADE5BwAAABicg4AAAAxOQcAAICY
+        nAMAAEBMzgEAACAm5wAAABCTcwAAAIjJOQAAAMTkHAAAAGJyDgAAADE5BwAAgJicAwAAQEzOAQAAICbn
+        AAAAEJNzAAAAiMk5AAAAxOQcAAAAYnIOAAAAMTkHAACAmJwDAABATM4BAAAgJucAAAAQk3MAAACIyTkA
+        AADE5BwAAABicg4AAAAxOQcAAICYnAMAAEBMzgEAACAm5wAAABCTcwAAAIjJOQAAAMTkHAAAAGJyDgAA
+        ADE5BwAAgJicAwAAQEzOAQAAICbnAAAAEJNzAAAAiMk5AAAAxOQcAAAAYnIOAAAAMTkHAACAmJwDAABA
+        TM4BAAAgJucAAAAQk3MAAACIyTkAAADE5BwAAABicg4AAAAxOQcAAICYnAMAAEBMzgEAACAm5wAAABCT
+        cwAAAIjJOQAAAMTkHAAAAGJyDgAAADE5BwAAgJicAwAAQEzOAQAAICbnAAAAEJNzAAAAiMk5AAAAxOQc
+        AAAAYnIOAAAAMTkHAACAmJwDAABATM4BAAAgJucAAAAQk3MAAACIyTkAAADE5BwAAABicg4AAAAxOQcA
+        AICYnAMAAEBMzgEAACAm5wAAABCTcwAAAIjJOQAAAMTkHAAAAGJyDgAAADE5BwAAgJicAwAAQEzOAQAA
+        ICbnAAAAEJNzAAAAiMk5AAAAxOQcAAAAYnIOAAAAMTkHAACAmJwDAABATM4BAAAgJucAAAAQk3MAAACI
+        yTkAAADE5BwAAABicg4AAAAxOQcAAICYnAMAAEBMzgEAACAm5wAAAJDafYaZDUrHRDRyAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="label1.Text" xml:space="preserve">
     <value>4 player game
+
 Each player starts with $1500
+
 If you roll doubles on the dice, you may roll again
+
 Pick up One Chance card or Community Chest card, when you land on either of those spaces 
+
 Can only keep “Get out of jail” card for later use
-If you are in jail you have to roll doubles on your first turn, if you do not roll doubles, on your second turn you can either try to roll doubles again or pay a fee or $50, and you can only roll on your next turn
+
+If you are in jail you have to roll doubles on your first turn, if you do not roll doubles, on your second turn you can either try to roll doubles again or pay a fee or $50, 
+and you can only roll on your next turn
+
 When you pass “Go” receive $200 from the bank
+
 Give your money to the bank when paying for property
+
 When you land on the property of another player, you must pay rent
-When you land on a property that is not owned, you can either buy it or put it up for an auction that you cannot participate in</value>
+
+When you land on a property that is not owned, you can either buy it or put it up for an auction that you cannot participate in
+</value>
   </data>
 </root>

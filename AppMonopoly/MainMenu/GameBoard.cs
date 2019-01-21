@@ -21,22 +21,23 @@ namespace MainMenu
         private int Move = 0; // How mush to move
         private int stopMove = 0; //Stop the Player form moveing agin.
         private PictureBox[] pictures = new PictureBox[4];
-        
+
 
         //Array of Coordinates
-        private int[] xcoordinate = { 1044, 928, 870, 812, 754, 694, 636, 578, 520, 462, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 404, 462, 520, 578, 636, 694, 754, 812, 870, 928, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044, 1044};
-        private int[] ycoordinate = { 766, 766, 766, 766, 766, 766, 766, 766, 766, 766, 766, 686, 625, 560, 498, 433, 368, 303, 238, 173, 108, 108, 108, 108, 108, 108, 108, 108, 108, 108, 108, 173, 238, 303, 368, 433, 498, 560, 625, 686, 766 };
+        private int[] xcoordinate = { 786, 786, 578, 478, 368, 368, 368, 368, 368, 473, 577, 684, 786, 786, 786, 786 };
+        private int[] ycoordinate = { 607, 607, 607, 607, 607, 460, 354, 252, 148, 148, 148, 148, 148, 257, 363, 463 };
 
         //Get Player Name from the Methods
         string[] playermoney = PlayerInfo.getPlayerMoney();
         string[] playersprits = PlayerInfo.getPlayerSprit();
         string[] playernames = PlayerInfo.getplayernames();
-
+        string[,] playerOwned = new string[4, 16]; 
 
         string[] BlockId = getBlockId();
         string[] BlockRent = getBlockRent();
+        string[] OwnedList = getBlockId();
 
-        
+
         //_______________________________________________________________________________________________________________
         public GameBoard()
         {
@@ -46,6 +47,7 @@ namespace MainMenu
             Display();
             btnYes.Hide();
             btnNo.Hide();
+            btnDebug.Hide();
         }
         private void InitializeSpritesArray() 
         {
@@ -54,14 +56,14 @@ namespace MainMenu
             {
                 spritename = playersprits[i];
                 switch (spritename) {
-                    case "Car":                
-                    pictures[i] = SpriteCar; break;
-                    case "Hat": 
-                    pictures[i] = SpriteHat; break;
-                    case "WeelCart":
-                    pictures[i] = SpritCart; break;
-                    case "Dog":
-                    pictures[i] = SpriteShoe; break;
+                    case "Simle":                
+                    pictures[i] = SpriteSimle; break;
+                    case "Sim": 
+                    pictures[i] = SpriteCry; break;
+                    case "Cry":
+                    pictures[i] = SpritSim; break;
+                    case "Love":
+                    pictures[i] = SpriteLove; break;
 
                 }
             }
@@ -90,8 +92,15 @@ namespace MainMenu
             SNVaule.Text = playersprits[PlayerTurn];
             TrVaule.Text = (PlayerTurn + 1).ToString();
             BLVaule.Text = BlockId[WVaule];
+            for(int i = 0; i < 15; i++)
+            {
+                if (!(playerOwned[PlayerTurn, i] == null))
+                {
+                    OPVaule.Text += "\n" + playerOwned[PlayerTurn, i];
 
-            
+                }
+            }
+
             return "";
         }
 
@@ -99,7 +108,7 @@ namespace MainMenu
         {
             Ploc[PlayerTurn] = Ploc[PlayerTurn] + Move;
             //make sure not to go beyond the board
-            if (Ploc[PlayerTurn] > 39) { Ploc[PlayerTurn] = Ploc[PlayerTurn] - 40; }
+            if (Ploc[PlayerTurn] > 15) { Ploc[PlayerTurn] = Ploc[PlayerTurn] - 16; }
              
             return "";
         }
@@ -120,6 +129,8 @@ namespace MainMenu
             int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
             if (!(Convert.ToInt16(BlockRent[MVaule]) == 0))
             {
+                playerOwned[PlayerTurn, MVaule] = BlockId[MVaule]; // Save this card in to Player Owned
+                OwnedList[MVaule] = Convert.ToString(PlayerTurn);
                 PLM = Convert.ToInt16(playermoney[PlayerTurn]) - Convert.ToInt16(BlockRent[MVaule]);
                 playermoney[PlayerTurn] = Convert.ToString(PLM);
                 Display();
@@ -133,7 +144,16 @@ namespace MainMenu
         {
             int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
             int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
-            if (!(Convert.ToInt16(BlockRent[MVaule]) == 0))
+            
+            if (playerOwned[PlayerTurn,MVaule] == BlockId[MVaule] ) //Checks if Current Player Owns this
+            {
+                MessageBox.Show("You alReady Own This");
+            }
+            else if(!(OwnedList[MVaule] == BlockId[MVaule]))
+            {
+                ChargePlayer();
+            }
+            else if (!(Convert.ToInt16(BlockRent[MVaule]) == 0))//Ask to buy a House
             {
                 btnYes.Show();
                 btnNo.Show();
@@ -142,6 +162,25 @@ namespace MainMenu
 
             return "";
         }
+
+        public string ChargePlayer()
+        {
+            
+            int MVaule = Convert.ToInt16(Ploc[PlayerTurn]);
+            int ToWho = int.Parse(OwnedList[MVaule]);
+            int PLM = Convert.ToInt16(playermoney[PlayerTurn]);
+            int ToPLM = Convert.ToInt16(playermoney[ToWho]);
+
+            MessageBox.Show("Hey " + playernames[ToWho] + "Mr" + playernames[PlayerTurn] + "Has Landed on you Land");
+
+            PLM = Convert.ToInt16(playermoney[PlayerTurn]) - Convert.ToInt16(BlockRent[MVaule]);
+            playermoney[PlayerTurn] = Convert.ToString(PLM);
+            ToPLM = Convert.ToInt16(playermoney[ToWho]) + Convert.ToInt16(BlockRent[MVaule]);
+            playermoney[ToWho] = Convert.ToString(ToPLM);
+            MessageBox.Show(playernames[ToWho] + " You Got " + BlockRent[MVaule] + "And you Blance is " + playermoney[ToWho]);
+            return "";
+        }
+
 
 
         public static string[] getBlockId() //Method to call the array PlayerMoney
@@ -172,7 +211,21 @@ namespace MainMenu
 
         }
 
-      //Buttons_________________________________________________________________________________________________________________________:)
+        public static string[] getBlockCost() //Method to call the array to Get RentPrice from Text File
+        {
+            StreamReader sr = new StreamReader("BlockRent.txt");
+            int Length = Convert.ToInt16(sr.ReadLine());
+            string[] BlockRent = new string[Length];
+            for (int i = 0; i < Length; i++)
+            {
+                BlockRent[i] = sr.ReadLine();
+            }
+            sr.Close();
+            return BlockRent;
+
+        }
+
+        //Buttons_________________________________________________________________________________________________________________________:)
 
         private void button1_Click_1(object sender, EventArgs e) //Debug Button 
         {
@@ -195,6 +248,7 @@ namespace MainMenu
                 Move = 0;
                 stopMove = 0;
                 Display();
+                OPVaule.Text = "";
             }
         }
 

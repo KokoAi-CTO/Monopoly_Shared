@@ -45,10 +45,12 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(912, 260);
+            this.btnBack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBack.BackgroundImage")));
+            this.btnBack.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(1155, 732);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(87, 25);
+            this.btnBack.Size = new System.Drawing.Size(114, 26);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "BACK";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -63,7 +65,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1010, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1280, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,19 +121,21 @@
             // lblRules
             // 
             this.lblRules.AutoSize = true;
-            this.lblRules.Location = new System.Drawing.Point(23, 49);
+            this.lblRules.Font = new System.Drawing.Font("Tahoma", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRules.Location = new System.Drawing.Point(21, 94);
             this.lblRules.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRules.Name = "lblRules";
-            this.lblRules.Size = new System.Drawing.Size(34, 13);
+            this.lblRules.Size = new System.Drawing.Size(69, 25);
             this.lblRules.TabIndex = 5;
             this.lblRules.Text = "Rules";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 90);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(948, 130);
+            this.label1.Size = new System.Drawing.Size(1196, 380);
             this.label1.TabIndex = 6;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -139,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1010, 296);
+            this.ClientSize = new System.Drawing.Size(1280, 769);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRules);
             this.Controls.Add(this.menuStrip1);

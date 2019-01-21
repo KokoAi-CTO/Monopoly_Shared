@@ -42,13 +42,9 @@ namespace MainMenu
             {
                 MessageBox.Show("Enter Something"); 
             }
-            else if (!(CheckBox1.Checked || checkBox2.Checked || checkBox3.Checked || checkBox4.Checked))
+            else if (!(RDSmile.Checked || RdSim.Checked || RDCry.Checked || RDLove.Checked))
             {
                 MessageBox.Show("Pick a Sprite");
-            }
-            else if(CheckBox1.Checked & checkBox2.Checked & checkBox3.Checked & checkBox4.Checked || CheckBox1.Checked & checkBox4.Checked || CheckBox1.Checked & checkBox3.Checked || checkBox2.Checked & checkBox3.Checked || checkBox2.Checked & checkBox4.Checked || CheckBox1.Checked & checkBox2.Checked || checkBox3.Checked & checkBox4.Checked)
-            {
-                MessageBox.Show("Pick Just one Sprite");
             }
             else if (ToExit < 3)
             {
@@ -82,31 +78,30 @@ namespace MainMenu
            lblWhatPlayer.Text = PlayerNumber.ToString();
 
             //This Code Below is to Check what Button is clicked 
-            if (CheckBox1.Checked)
+            if (RDSmile.Checked)
             {
-                PlayerSprit[NextPlayer] = CheckBox1.Text;
-                CheckBox1.Visible = false;
-                CheckBox1.Checked = false;
+                PlayerSprit[NextPlayer] = RDSmile.Text;
+                RDSmile.Visible = false;
+                RDSmile.Checked = false;
             }
-            else if (checkBox2.Checked)
+            else if (RdSim.Checked)
             {
-                PlayerSprit[NextPlayer] = checkBox2.Text;
-               // pictures[NextPlayer] = InitializeComponent()
-                checkBox2.Visible = false;
-                checkBox2.Checked = false;
+                PlayerSprit[NextPlayer] = RdSim.Text;
+                RdSim.Visible = false;
+                RdSim.Checked = false;
             }
-            else if (checkBox3.Checked)
+            else if (RDCry.Checked)
             {
-                PlayerSprit[NextPlayer] = checkBox3.Text;
-                
-                checkBox3.Visible = false;
-                checkBox3.Checked = false;
+                PlayerSprit[NextPlayer] = RDCry.Text;
+
+                RDCry.Visible = false;
+                RDCry.Checked = false;
             }
-            else if (checkBox4.Checked)
+            else if (RDLove.Checked)
             {
-                PlayerSprit[NextPlayer] = checkBox4.Text;
-                checkBox4.Visible = false;
-                checkBox4.Checked = false;
+                PlayerSprit[NextPlayer] = RDLove.Text;
+                RDLove.Visible = false;
+                RDLove.Checked = false;
             }
 
             PlayerMoney[NextPlayer] = "1500"; //Set Players Money
@@ -135,8 +130,10 @@ namespace MainMenu
 
         }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
-       
+        }
     }
 }
 
